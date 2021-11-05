@@ -1,0 +1,38 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %}
+Feedback
+{% endblock title %}
+{% block body %}
+{% for message in messages %}
+    <div class="alert alert-success alert-{{ message.tags }}" role="alert">
+  <strong>Message-</strong> {{ message }}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+<div class="body">
+ <div class="container py-4 main">
+        <h1 class="text-center">Feedback</h1>
+        <form method="POST" action="/feedback">
+            {% csrf_token %}
+             
+            <div class="form-group">
+                <label for="formFile" class="form-label"><b>Feedback</b></label>
+                <input type="text" class="form-control" name="feedback" id="feedback" placeholder="Enter Feedback" aria-label="First name">
+            </div>
+            <button class="btn btn-primary my-2 " type="submit">Submit</button>
+            </form>
+
+            </div>
+  
+          <footer style="background-color: #112c54; width: 100%; height: 90px; position: absolute; bottom: 0;">
+        <h6 class="text-center" style="color: white;"> Tech-U <small>&copy</small> all rights reserved</h6>
+
+        <div class="icon" style="display: flex; height: 30px; width: 100;margin-left: 8px;">
+
+
+            
+        </div>
+    </footer> 
+    </div> 
+{% endblock body %}

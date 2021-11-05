@@ -1,0 +1,55 @@
+{% extends 'index.html' %} {% block title %} Contact {% endblock title %} {% block body %}
+
+{% for message in messages %}
+    <div class="alert alert-success alert-{{ message.tags }}" role="alert">
+  <strong>Message-</strong> {{ message }}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+
+        <div class="carousel-item active">
+
+            <img src="/static/ci.jpeg" style="height: 900px;" class="d-block w-100" alt="...">
+
+        </div>
+
+    </div>
+
+    <div class="container py-4">
+   
+        <h1 class="text-center">Contact US</h1>
+        <form method="POST" action="/contact">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="formFile" class="form-label">NAME</label>
+                <input type="text" class="form-control" name="name" id="name" placeholder="Enter Name" aria-label="First name">
+            </div>
+            <div class="form-group">
+                <label for="formFile" class="form-label">EMAIL</label>
+                <input type="text" class="form-control" name="email" id="email" placeholder="Enter Email" aria-label="First name">
+            </div>
+            <div class="form-group">
+                <label for="formFile" class="form-label">PHONE</label>
+                <input type="phone" class="form-control" name="phone" id="phone" placeholder="Enter Email" aria-label="First name">
+            </div>
+            <div class="form-group">
+                <label for="formFile" class="form-label">WHAT DO YOU NEED?</label>
+                <textarea class="form-control" name="desc" id="desc" rows="3"></textarea>
+            </div>
+            <button class="btn btn-primary my-2" type="submit">Submit</button>
+        </form>
+
+    </div>
+    <footer style="background-color: #112c54; width: 100; height: 125px;">
+        <h6 class="text-center" style="color: white;"> Tech-U <small>&copy</small> all rights reserved</h6>
+
+        <div class="icon" style="display: flex; height: 30px; width: 100;margin-left: 8px;">
+
+
+            
+        </div>
+    </footer>
+    {% endblock body %}
