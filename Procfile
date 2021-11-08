@@ -1,1 +1,1 @@
- web: gunicorn techu2k21.wsgi --log-file -
+web: gunicorn CCMS.wsgi --log-file -
