@@ -8,8 +8,8 @@ docker run imagename
 docker run -d --name container_name imagename
 
 ## docker container kill and start and remove
-docker kill container_id--
-docker start container_id--
+docker kill container_id__
+docker start container_id__
 docker rm container_id
 
 ## see running conatiners
