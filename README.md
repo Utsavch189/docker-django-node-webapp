@@ -1,6 +1,6 @@
 # django-webapp
-## Docker build
+## Docker build [create image]
 docker build . -t appname
 
-## create image
+## create containers
  docker run -d -p port:8000 appname
