@@ -8,9 +8,9 @@ docker run imagename
 docker run -d --name container_name imagename
 
 ## docker container kill and start and remove
-docker kill container_id <br/>
-docker start container_id <br/>
-docker rm container_id
+docker kill container_id/container_name <br/>
+docker start container_id/container_name <br/>
+docker rm container_id/container_name
 
 ## see running conatiners
 docker ps
