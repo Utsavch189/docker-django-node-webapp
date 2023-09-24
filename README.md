@@ -4,7 +4,7 @@ docker build . -t imagename
 
 ## run docker container
 docker run imagename
-     ``` Or,
+### Or
 docker run -d --name container_name imagename
 
 ## see running conatiners
