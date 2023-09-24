@@ -9,11 +9,12 @@ docker run -d --name container_name imagename
 
 ## docker container kill and start and remove
 docker kill container_id/container_name <br/>
+docker stop container_id/container_name <br/>
 docker start container_id/container_name <br/>
 docker rm container_id/container_name
 
 ## see running conatiners
 docker ps
 
-## create containers
- docker run -d -p port:8000 appname
+## port maping with our local machine to container
+ docker run -d -p localMachinePort:containerExposedPort appname
