@@ -2,6 +2,9 @@
 ## Docker build [create image]
 docker build . -t imagename
 
+## see images
+docker images
+
 ## run docker container
 docker run imagename
 ### Or
