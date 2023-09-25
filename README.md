@@ -30,5 +30,11 @@ rather than image and changes will be reflected.
 
 ## Create a container with local machine map for live changes 
 docker run -v localWorkingDir:dockerWorkingDir --name containerName -p mappingPort:dockerImagePort imagename <br/>
-<b>For this app</b> : docker run -v /home/utsav/Desktop/docker-django-webapp:/usr/app --name conty  -p 2800:8000 dj-app
+<b>For this app</b> : docker run -v /home/utsav/Desktop/docker-django-webapp:/usr/app --name conty  -p 2800:8000 dj-app <br/>
+
+suppose a dir inside of a image is mandatory to be present but that dir is missing in our <br/>
+local working dir. That case if we create volume container above manner that dir inside of image </br>
+working dir should be gone because that dir is not present in our working dir. <br/>
+<b>Here we should use : </b> docker run -v /home/utsav/Desktop/docker-django-webapp:/usr/app -v /usr/app/thatNeededDir --name conty  -p 2800:8000 dj-app <br/>
+
 
