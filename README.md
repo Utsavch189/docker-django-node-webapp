@@ -23,7 +23,7 @@ docker ps
 
 # Docker Volume 
 
-## If we create an image of our application and run the container from that image, then it is fine. But
-## in dev mode if we make changes then the running container can't reflect that changes until we rebuild
-## our image again. So, here comes out Volume in docker, which map that container from our local machine
-## rather than image and changes will be reflected.
+If we create an image of our application and run the container from that image, then it is fine. But <br/>
+in dev mode if we make changes then the running container can't reflect that changes until we rebuild <br/>
+our image again. So, here comes out Volume in docker, which map that container from our local machine <br/>
+rather than image and changes will be reflected.
