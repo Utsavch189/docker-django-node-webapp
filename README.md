@@ -19,5 +19,5 @@ docker rm container_id/container_name
 ## see running conatiners
 docker ps
 
-## port maping with our local machine to container
- docker run -d -p localMachinePort:containerExposedPort appname
+## create container and port maping with our local machine to container
+ docker run -d -p --name containername localMachinePort:containerExposedPort imagename
