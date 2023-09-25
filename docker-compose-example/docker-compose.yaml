@@ -1,0 +1,27 @@
+version: "3.10"
+services:
+  client-image:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    container_name: cln1
+    ports:
+      - 3000:3000
+    volumes:
+      - './client:/usr/app'
+      - '/usr/app/node_modules'
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+
+  server-image:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: srv1
+    ports:
+      - 8000:8000
+    volumes:
+      - './server:/usr/app'
+      - '/usr/app/node_modules'
+    environment:
+      - CHOKIDAR_USEPOLLING=true

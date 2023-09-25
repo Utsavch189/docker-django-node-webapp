@@ -1,0 +1,4 @@
+/ docker-compose-example/client/node_modules
+/ docker-compose-example/server/node_modules
+/ env
+/ myapp/__pycache__
