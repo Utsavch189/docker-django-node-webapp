@@ -1,5 +1,4 @@
-# django-webapp
-## Docker build [create image]
+# Docker build [create image]
 docker build . -t imagename
 
 ## see images
@@ -21,3 +20,5 @@ docker ps
 
 ## create container and port maping with our local machine to container
  docker run -d -p --name containername localMachinePort:containerExposedPort imagename
+
+# Docker Volume 
