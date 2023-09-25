@@ -28,7 +28,7 @@ in dev mode if we make changes then the running container can't reflect that cha
 our image again. So, here comes out Volume in docker, which map that container from our local machine <br/>
 rather than image and changes will be reflected.
 
-## Create a container with local machine map for live changes 
+## Create a container with local machine map for live changes with Volume
 docker run -v localWorkingDir:dockerWorkingDir --name containerName -p mappingPort:dockerImagePort imagename <br/>
 <b>For this app</b> : docker run -v /home/utsav/Desktop/docker-django-webapp:/usr/app --name conty  -p 2800:8000 dj-app <br/>
 
