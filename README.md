@@ -24,6 +24,9 @@ docker ps
 ## Go inside of a docker container from termial and access it like ssh
 sudo docker exec -it container_id/container_name sh
 
+## Pull docker images like, mongo,postgress,python,ubuntu which are already exists in docker hub
+docker pull imagename(from docker hub)[with its version (Optional)]
+
 # Docker Volume 
 
 If we create an image of our application and run the container from that image, then it is fine. But <br/>
