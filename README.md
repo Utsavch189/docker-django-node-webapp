@@ -10,7 +10,7 @@ docker run imagename
 docker run -d --name container_name imagename
 
 ## docker container  run,kill and start and remove
-docker run image_name [-d,--name are Optional but recomended according to me]<br/>
+docker run image_name [-d,--name are Optional but recomended according to me] (If that image present locally then it use it otherwise it search that image into docker hub)<br/>
 docker kill container_id/container_name <br/>
 docker stop container_id/container_name <br/>
 docker start container_id/container_name <br/>
