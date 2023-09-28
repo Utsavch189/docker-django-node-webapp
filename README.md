@@ -9,7 +9,8 @@ docker run imagename
 ### Or
 docker run -d --name container_name imagename
 
-## docker container kill and start and remove
+## docker container  run,kill and start and remove
+docker run image_name [-d,--name are Optional but recomended according to me]<br/>
 docker kill container_id/container_name <br/>
 docker stop container_id/container_name <br/>
 docker start container_id/container_name <br/>
