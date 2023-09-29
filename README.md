@@ -31,6 +31,9 @@ doxker import - imageename < something.zip
 2. docker tag imagename docker_hub_username/imagename <br/>
 3. docker push docker_hub_username/imagename </br>
 
+## Pull image from docker hub
+docker pull imagename
+
 ## Go inside of a docker container from termial and access it like ssh
 sudo docker exec -it container_id/container_name sh
 
