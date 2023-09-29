@@ -26,6 +26,10 @@ docker ps
 docker export container_id/container_name > something.zip <br/>
 doxker import - imageename < something.zip
 
+## Docker save and load
+1. docker save imagename > something.tar (works same as export but it stores every layer of that image)<br/>
+2. docker load image < something.tar (works same as import but load the whole image with every data)
+
 ## Push Docker image to docker hub
 1. docker login <br/>
 2. docker tag imagename docker_hub_username/imagename <br/>
