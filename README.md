@@ -22,6 +22,10 @@ docker ps
 ## create container and port maping with our local machine to container
  docker run -d -p localMachinePort:containerExposedPort --name containername  imagename
 
+## Docker Import and Export
+docker export container_id/container_name > something.zip <br/>
+doxker import - imageename < something.zip
+
 ## Go inside of a docker container from termial and access it like ssh
 sudo docker exec -it container_id/container_name sh
 
