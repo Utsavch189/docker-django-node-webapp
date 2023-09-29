@@ -26,6 +26,11 @@ docker ps
 docker export container_id/container_name > something.zip <br/>
 doxker import - imageename < something.zip
 
+## Push Docker image to docker hub
+1. docker login <br/>
+2. docker tag imagename docker_hub_username/imagename <br/>
+3. docker push docker_hub_username/imagename </br>
+
 ## Go inside of a docker container from termial and access it like ssh
 sudo docker exec -it container_id/container_name sh
 
