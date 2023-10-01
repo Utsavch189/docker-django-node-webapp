@@ -9,11 +9,24 @@ docker run imagename
 ### Or
 docker run -d --name container_name imagename
 
+# Some Keywords For Dockerfile..
+1. From : Use to pull image with version </br>
+2. RUN : RUN is an image build step, the state of the container after a RUN command will be committed to the container image.</br>
+3. ENV : use to set enviroment vars</br>
+4. LABEL : use to put more extra meta info into that image.<br/>
+5. EXPOSE : The EXPOSE instruction informs Docker that the container listens on the specified network ports at runtime. </br>
+6. CMD : The CMD command​ specifies the instruction that is to be executed when a Docker container starts. </br>
+7. COPY : use to just copying things.</br>
+8. ADD :  ADD has some features (like local-only tar extraction and remote URL support) that are not immediately obvious. </br>
+9. WORKDIR : The WORKDIR instruction in a Dockerfile sets the current working directory for subsequent instructions in the Dockerfile.</br>
+
+
 ## Different between COPY and ADD in Dockerfile
 <b>
 COPY just copy things , but ADD do more stuffs.</br>
 Suppose I COPY a .zip file into docker build it will simply copy that file, </br>
-but in case of ADD that .zip will be extracted also while build.
+but in case of ADD that .zip will be extracted also while build.</br>
+The best use for ADD is local tar file auto-extraction into the image, as in ADD rootfs.tar.xz / .
 </b>
 
 ## docker container  run,kill and start and remove
