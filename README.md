@@ -88,9 +88,9 @@ rather than image and changes will be reflected.
 1. docker image inspect imageid, and we will get something like, <b>"Volumes": {
                 "/var/lib/mysql": {}
             },</b></br>
-2./var/lib/mysql denotes the target volume mount dir of that mysql image.</br>
+2. /var/lib/mysql denotes the target volume mount dir of that mysql image.</br>
 3. docker volume create volname.</br>
-4.docker run -d --name container_name -e MYSQL_ALLOW_EMPTY_PASSWORD=true -v volname:/var/lib/mysql  mysql.</br>
+4. docker run -d --name container_name -e MYSQL_ALLOW_EMPTY_PASSWORD=true -v volname:/var/lib/mysql  mysql.</br>
 <b>Now every changes inside mysql db should be stored inside of that volume.</br>
 And if we del taht conatiner and create container again with same volume just like</br>
 line number 4, every data should be persisted.
