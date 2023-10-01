@@ -9,6 +9,13 @@ docker run imagename
 ### Or
 docker run -d --name container_name imagename
 
+## Different between COPY and ADD in Dockerfile
+<b>
+COPY just copy things , but ADD do more stuffs.</br>
+Suppose I COPY a .zip file into docker build it will simply copy that file, </br>
+but in case of ADD that .zip will be extracted also while build.
+</b>
+
 ## docker container  run,kill and start and remove
 docker run image_name [-d,--name are Optional but recomended according to me] (If that image present locally then it use it otherwise it search that image into docker hub)<br/>
 docker kill container_id/container_name <br/>
