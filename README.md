@@ -19,6 +19,7 @@ docker run -d --name container_name imagename
 7. COPY : use to just copying things.</br>
 8. ADD :  ADD has some features (like local-only tar extraction and remote URL support) that are not immediately obvious. </br>
 9. WORKDIR : The WORKDIR instruction in a Dockerfile sets the current working directory for subsequent instructions in the Dockerfile.</br>
+10. ENTRYPOINT : Same as cmd but it executes before cmd. </br>
 
 
 ## Different between COPY and ADD in Dockerfile
