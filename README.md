@@ -125,6 +125,7 @@ docker run --network=network-name image_name.</br>
 ## Connect/Disconnect a container with network.
 dcoker network connect network-name container_id.</br>
 dcoker network disconnect network-name container_id.</br>
+<b>By connect method we can connect multiple networks to a container.</b></br>
 
 # Docker Compose
 <b>
