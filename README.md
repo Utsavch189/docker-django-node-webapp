@@ -106,6 +106,26 @@ working dir should be gone because that dir is not present in our working dir. <
 <b>For node apps I want to persist node_modules : </b> docker run -v localWorkingDir:/usr/app -v /usr/app/node_modules --name conty  -p port:exposedPort imagename <br/>
 <b>** For React app -it flag should be appended before imagename</b><br/>
 
+# Docker Network
+By Default docker comes with bridge,host and null networks drivers.</br>
+Any container by default runs with bridge network.</br>
+Always it is best practice to use custom diff networks for diff applications.</br>
+<b>A bridge network can connect multiple containers. But a host network only can connect a single container.</b></br>
+<b>Host network attach the machines private ip to that container.</b></br>
+<b>null network makes a container network-less.</b></br>
+
+## Create Your Network
+docker network -d driver-type network-name.</br>
+<b>Also we can assign ip and lot more things for our custom network.</b></br>
+
+## Attach a container with network.
+docker run --network=network-name image_name.</br>
+<b>All containers in this network can communicate with each other without port mapping. But not for outer networks.</b></br>
+
+## Connect/Disconnect a container with network.
+dcoker network connect network-name container_id.</br>
+dcoker network disconnect network-name container_id.</br>
+
 # Docker Compose
 <b>
 If we have some api servers and some client side apps then every time Dockerfile writing is overwhelming.<br/>
