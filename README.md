@@ -129,6 +129,17 @@ Always it is best practice to use custom diff networks for diff applications.</b
 6. none: Completely isolate a container from the host and other containers. none is not available for Swarm services. </br>
 </b>
 
+## Network Drivers Summery
+<b>
+The default bridge network is good for running containers that don't require special networking capabilities.</br>
+User-defined bridge networks enable containers on the same Docker host to communicate with each other. A user-defined network typically defines an isolated network for multiple containers belonging to a common project or component.</br>
+Host network shares the host's network with the container. When you use this driver, the container's network isn't isolated from the host.</br>
+Overlay networks are best when you need containers running on different Docker hosts to communicate, or when multiple applications work together using Swarm services.</br>
+Macvlan networks are best when you are migrating from a VM setup or need your containers to look like physical hosts on your network, each with a unique MAC address.</br>
+IPvlan is similar to Macvlan, but doesn't assign unique MAC addresses to containers. Consider using IPvlan when there's a restriction on the number of MAC addresses that can be assigned to a network interface or port.</br>
+</b>
+
+
 ## Create Your Network
 docker network -d driver-type network-name.</br>
 <b>Also we can assign ip and lot more things for our custom network.</b></br>
