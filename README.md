@@ -69,12 +69,25 @@ Docker registry may be used to create faster CI/CD pipelines, which helps to red
 5. If we hit http://127.0.0.1:5000/v2/_catalog , will see now : {"repositories":["utsav123/django-push"]}. </br>
 <b>**note : docker registry only works on https. But by default 127.0.0.0/8 ranges are allowed. We can change this behaviour.</b></br>
 
-## Allow other ip ranges for docker registry pull/push in http env :
+## Allow other ip ranges for docker registry pull/push in http env (insecure):
 1. create a file daemon.json.</br>
 2. Put like this, {"insecure-registries":["10.10.10.1:5000"] }.</br>
 3. move this to /etc/docker. </br>
 4. service docker restart.</br>
 
+## Allow docker registry pull/push in https env with ssl cert (secure):
+1. if any daemon.json in /etc/docker/ , delete it.</br>
+2. mkdir certs. (into /home/utsav/Desktop)</br>
+3. openssl req -newkey rsa:4096 -nodes -sha256 -keyout certs/domain.key -x509 -days 365 -out certs/domain.crt </br>
+4. in that stage ,Common Name (e.g. server FQDN or YOUR name) []:repo.docker.local </br>
+5. cp -r certs/ /etc/docker/certs.d </br>
+6. cd /etc/docker/certs.d/ </br>
+7. mkdir repo.docker.local:5000 </br>
+8. cp /home/utsav/Desktop/certs/domain.crt /etc/docker/certs.d/repo.docker.local\:5000/ca.crt </br>
+9. gedit /etc/hosts and update, 192.168.140.129 repo.docker.local </br>
+10. service docker restart.</br>
+11. docker container run -d --name secure_registry -p 5000:5000  -v $(pwd)/certs/:/certs -e REGISTRY_HTTP_TLS_CERTIFICATE=/certs/domain.crt -e REGISTRY_HTTP_TLS_KEY=/certs/domain.key registry. (into /home/utsav/Desktop dir)</br>
+12. Now instade http://127.0.0.1:5000 we can use https://repo.docker.local:5000
 
 ## Pull image from docker hub
 docker pull imagename
