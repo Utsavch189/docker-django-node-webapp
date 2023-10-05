@@ -114,6 +114,21 @@ Always it is best practice to use custom diff networks for diff applications.</b
 <b>Host network attach the machines private ip to that container.</b></br>
 <b>null network makes a container network-less.</b></br>
 
+## Network Drivers
+<b>
+1. bridge: The default network driver. If you don't specify a driver, this is the type of network you are creating. Bridge networks are commonly used when your application runs in a container that needs to communicate with other containers on the same host.</br>
+
+2. host: Remove network isolation between the container and the Docker host, and use the host's networking directly.</br>
+
+3. overlay: Overlay networks connect multiple Docker daemons together and enable Swarm services and containers to communicate across nodes. This strategy removes the need to do OS-level routing.</br>
+
+4. ipvlan: IPvlan networks give users total control over both IPv4 and IPv6 addressing. The VLAN driver builds on top of that in giving operators complete control of layer 2 VLAN tagging and even IPvlan L3 routing for users interested in underlay network integration.</br>
+
+5. macvlan: Macvlan networks allow you to assign a MAC address to a container, making it appear as a physical device on your network. The Docker daemon routes traffic to containers by their MAC addresses.</br> Using the macvlan driver is sometimes the best choice when dealing with legacy applications that expect to be directly connected to the physical network, rather than routed through the Docker host's network stack.</br>
+
+6. none: Completely isolate a container from the host and other containers. none is not available for Swarm services. </br>
+</b>
+
 ## Create Your Network
 docker network -d driver-type network-name.</br>
 <b>Also we can assign ip and lot more things for our custom network.</b></br>
