@@ -118,7 +118,7 @@ Always it is best practice to use custom diff networks for diff applications.</b
 <b>
 1. bridge: The default network driver. If you don't specify a driver, this is the type of network you are creating. Bridge networks are commonly used when your application runs in a container that needs to communicate with other containers on the same host.</br>
 
-2. host: Remove network isolation between the container and the Docker host, and use the host's networking directly.</br>
+2. host: Remove network isolation between the container and the Docker host, and use the host's networking directly. Use your's machine's ip.</br>
 
 3. overlay: Overlay networks connect multiple Docker daemons together and enable Swarm services and containers to communicate across nodes. This strategy removes the need to do OS-level routing.</br>
 
