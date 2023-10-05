@@ -56,6 +56,26 @@ doxker import - imageename < something.zip
 2. docker tag imagename docker_hub_username/imagename <br/>
 3. docker push docker_hub_username/imagename </br>
 
+# Docker Registry/Repository
+<b>
+Docker registries are used to host and distribute Docker Images.</br>
+Docker registry may be used to create faster CI/CD pipelines, which helps to reduce build and deployment time.</br> Docker Registry is useful if you want complete control over where your images are kept. A private Docker registry can be used.</br> You gain total control over your applications by doing so.
+</b></br>
+
+1. docker image pull registry:latest.</br>
+2. docker container run -d -p 5000:5000 --name my-registry registry.</br>
+3. docker image tag utsav123/django-push:latest 127.0.0.1:5000/utsav123/django-push:v2.</br>
+4. docker image push 127.0.0.1:5000/utsav123/django-push:v2.</br>
+5. If we hit http://127.0.0.1:5000/v2/_catalog , will see now : {"repositories":["utsav123/django-push"]}. </br>
+<b>**note : docker registry only works on https. But by default 127.0.0.0/8 ranges are allowed. We can change this behaviour.</b></br>
+
+## Allow other ip ranges for docker registry pull/push in http env :
+1. create a file daemon.json.</br>
+2. Put like this, {"insecure-registries":["10.10.10.1:5000"] }.</br>
+3. move this to /etc/docker. </br>
+4. service docker restart.</br>
+
+
 ## Pull image from docker hub
 docker pull imagename
 
