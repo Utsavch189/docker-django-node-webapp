@@ -47,6 +47,12 @@ docker ps
 docker export container_id/container_name > something.zip <br/>
 doxker import - imageename < something.zip
 
+## Docker commit
+<b>
+Docker commit is used to reflect changes of a container to a new image.
+</b>
+docker commit container_id imagename:tag</br>
+
 ## Docker save and load
 1. docker save imagename > something.tar (works same as export but it stores every layer of that image)<br/>
 2. docker load image < something.tar (works same as import but load the whole image with every data)
