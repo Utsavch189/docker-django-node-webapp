@@ -194,4 +194,8 @@ So docker compose is a global yaml file that helps to configure multiple contain
 ## Compose up 
 docker-compose up --build
 ### Or
-docker-compose up
+docker-compose up </br>
+<b>By default docker-compose searches for docker-compose.yml file on that dir</b>
+
+## Compose with a diff named yml file
+docker-compose -f filename.yml up -d
