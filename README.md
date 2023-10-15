@@ -99,7 +99,8 @@ Docker registry may be used to create faster CI/CD pipelines, which helps to red
 docker pull imagename
 
 ## Go inside of a docker container from termial and access it like ssh
-sudo docker exec -it container_id/container_name sh
+docker exec -it container_id/container_name sh</br>
+<b>To enter conatiner with root user : </b> docker exec -it -u root container_id/container_name sh
 
 ## Pull docker images like, mongo,postgress,python,ubuntu which are already exists in docker hub
 docker pull imagename(from docker hub)[with its version (Optional)]
