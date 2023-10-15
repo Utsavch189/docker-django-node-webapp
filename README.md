@@ -202,10 +202,10 @@ So docker compose is a global yaml file that helps to configure multiple contain
 docker-compose build
 
 ### run those containers
-docker-compose -d up
+docker-compose up -d
 
 ### Down or Remove those containers
-docker-compose down
+docker-compose down</br>
 </br>
 <b>Magic of docker-compose is because of we already mention container names into docker compose.yaml ,</br>
 so we don't need to specify container names again and again to run and remove containers.</br>
