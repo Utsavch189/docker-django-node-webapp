@@ -198,10 +198,18 @@ dcoker network disconnect network-name container_id.</br>
 If we have some api servers and some client side apps then every time Dockerfile writing is overwhelming.<br/>
 So docker compose is a global yaml file that helps to configure multiple containers. </b>
 
-## Compose up 
-docker-compose up --build
-### Or
-docker-compose up </br>
+## Compose image 
+docker-compose build
+
+### run those containers
+docker-compose -d up
+
+### Down or Remove those containers
+docker-compose down
+</br>
+<b>Magic of docker-compose is because of we already mention container names into docker compose.yaml ,</br>
+so we don't need to specify container names again and again to run and remove containers.</br>
+</b>
 <b>By default docker-compose searches for docker-compose.yml file on that dir</b>
 
 ## Compose with a diff named yml file
