@@ -181,7 +181,7 @@ IPvlan is similar to Macvlan, but doesn't assign unique MAC addresses to contain
 
 
 ## Create Your Network
-docker network -d driver-type network-name.</br>
+docker network create -d driver-type network-name.</br>
 <b>Also we can assign ip and lot more things for our custom network.</b></br>
 
 ## Attach a container with network.
