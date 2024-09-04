@@ -205,7 +205,7 @@ docker-compose build
 docker-compose up -d
 
 ### Down or Remove those containers
-docker-compose down</br>
+docker-compose down or docker-compose down -v</br>
 </br>
 <b>Magic of docker-compose is because of we already mention container names into docker compose.yaml ,</br>
 so we don't need to specify container names again and again to run and remove containers.</br>
@@ -214,3 +214,44 @@ so we don't need to specify container names again and again to run and remove co
 
 ## Compose with a diff named yml file
 docker-compose -f filename.yml up -d
+
+## extra-host config in docker-compose.yaml
+<b><pre>
+version: "3.10"
+services:
+  flask:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 8000:8000
+    volumes:
+      - /home/utsav/logs:/app/logs
+    image: test_flask
+    container_name: flask1
+    extra_hosts:
+      - "host.docker.internal:host-gateway"</pre>
+</b>
+<br>
+### What is <b>extra_hosts: - "host.docker.internal:host-gateway"</b><br>
+1. extra_hosts allows you to define additional host-to-IP mappings inside the container.<br>
+2. "host.docker.internal:host-gateway" maps host.docker.internal to the host machine's IP address. This is especially useful if your containers need to communicate with services running on your host machine.<br>
+### Use Case:
+<b>You have a service running on your host machine (e.g., a database on port 5432),<br> and you want to connect to it from within a Docker container. The host.docker.internal alias allows the container to reach the host machine by this name.<b><br>
+<b><pre>
+import psycopg2
+
+# Connect to a PostgreSQL database running on the host machine
+connection = psycopg2.connect(
+    host="host.docker.internal",
+    port=5432,
+    database="mydatabase",
+    user="myuser",
+    password="mypassword"
+)
+</pre></b><br>
+<b>
+In this example, host.docker.internal will point to the host machine's IP address,<br>
+allowing the Flask container to connect to the database running on the host. <br>
+The extra_hosts setting in the Docker Compose file makes this possible.</b><br>
+
